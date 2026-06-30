@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study — Luxury Brand Market Entry: France → Japan | Aadarsh Tripathi</title>
+<meta name="description" content="Global marketing strategy case study: cross-cultural consumer segmentation, Hofstede analysis, GCCP positioning and a go-to-market product concept for a French luxury brand entering Japan. By Aadarsh Tripathi, MSc Marketing, University of Leeds.">
+<style>
+  :root{
+    --ink:#15202b; --ink-soft:#475566; --ink-mute:#7a8798;
+    --line:#e4e8ee; --line-soft:#eef1f5;
+    --bg:#ffffff; --bg-soft:#f7f6fb; --card:#ffffff;
+    --accent:#7a4ee0; --accent-2:#c2410c; --gold:#b8862b;
+    --r:16px; --max:920px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg-soft);line-height:1.62;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:var(--max);margin:28px auto;background:var(--bg);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 12px 40px rgba(20,32,43,.06)}
+  .pad{padding:44px 52px}
+  @media(max-width:640px){.pad{padding:30px 24px}}
+  a{color:var(--accent);text-decoration:none}
+
+  .top{background:linear-gradient(135deg,#1a1230,#3a2168);color:#fff;padding:40px 52px}
+  @media(max-width:640px){.top{padding:30px 24px}}
+  .kicker{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:#e0b34d;font-weight:600}
+  .top h1{font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.12;margin:12px 0 10px;letter-spacing:-.5px;font-weight:800}
+  .top p{color:#d2c8e6;max-width:640px;font-size:1.02rem}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .pill{font-size:.78rem;padding:6px 13px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);color:#ece6f6}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-soft)}
+  @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{padding:22px 20px;text-align:center;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:0}
+  .stat .n{font-size:1.5rem;font-weight:800;color:var(--accent);letter-spacing:-.5px}
+  .stat .l{font-size:.76rem;color:var(--ink-mute);margin-top:3px}
+
+  h2.sec{font-size:1.18rem;font-weight:800;letter-spacing:-.3px;margin:34px 0 6px;display:flex;align-items:center;gap:10px}
+  h2.sec:first-child{margin-top:0}
+  .tag{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--bg-soft);border:1px solid var(--line);padding:3px 9px;border-radius:6px}
+  p.body{color:var(--ink-soft);margin:8px 0 0;font-size:.96rem}
+  .lead{font-size:1.04rem;color:var(--ink);font-weight:500}
+
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+  .chip{font-size:.76rem;padding:5px 11px;border-radius:999px;background:var(--bg-soft);border:1px solid var(--line);color:var(--ink-soft)}
+
+  .chartcard{border:1px solid var(--line);border-radius:var(--r);padding:22px;margin-top:16px;background:var(--card)}
+  .chartcard .ct{font-size:.82rem;font-weight:700;color:var(--ink);margin-bottom:4px}
+  .chartcard .cs{font-size:.78rem;color:var(--ink-mute);margin-bottom:16px}
+
+  /* hofstede bars */
+  .bar-row{display:grid;grid-template-columns:150px 1fr 64px;align-items:center;gap:12px;margin:9px 0;font-size:.82rem}
+  .bar-row .lbl{color:var(--ink-soft);text-align:right}
+  .bar-track{height:16px;background:var(--line-soft);border-radius:6px;overflow:hidden}
+  .bar-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--accent),#9a72ec)}
+  .bar-row .val{font-weight:700;color:var(--ink);font-size:.74rem}
+
+  /* segment grouped bars */
+  .legend{display:flex;gap:16px;font-size:.76rem;color:var(--ink-soft);margin-bottom:16px;flex-wrap:wrap}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .sw{width:11px;height:11px;border-radius:3px;display:inline-block}
+  .sw-a{background:#c2410c}.sw-b{background:#7a4ee0}.sw-c{background:#9aa6b6}
+  .trait{margin:14px 0}
+  .trait .tn{font-size:.8rem;font-weight:600;color:var(--ink);margin-bottom:5px}
+  .gb{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+  .gcol{display:flex;align-items:center;gap:7px}
+  .gtrack{flex:1;height:13px;background:var(--line-soft);border-radius:5px;overflow:hidden}
+  .gf{height:100%;border-radius:5px}
+  .gf-a{background:#c2410c}.gf-b{background:#7a4ee0}.gf-c{background:#9aa6b6}
+  .gv{font-size:.7rem;font-weight:700;color:var(--ink-mute);width:14px}
+
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:13px;margin-top:16px}
+  @media(max-width:720px){.grid3{grid-template-columns:1fr}}
+  .seg{border:1px solid var(--line);border-radius:var(--r);padding:17px;background:var(--card)}
+  .seg.target{border:1.5px solid var(--accent);box-shadow:0 6px 20px rgba(122,78,224,.1)}
+  .seg .badge{font-size:.66rem;font-weight:700;padding:3px 9px;border-radius:999px;display:inline-block;margin-bottom:8px}
+  .b-avoid{background:#fdeee5;color:#bb4216}
+  .b-target{background:#efe8fd;color:#6435cf}
+  .b-short{background:#eef1f5;color:#5f6b7a}
+  .seg b{font-size:.95rem}
+  .seg p{font-size:.84rem;color:var(--ink-soft);margin-top:6px}
+
+  .callout{display:flex;gap:12px;background:var(--bg-soft);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:14px 16px;margin-top:16px}
+  .callout .ico{font-size:1.1rem}
+  .callout p{font-size:.88rem;color:var(--ink-soft);margin:0}
+  .callout b{color:var(--ink)}
+
+  .rec{display:flex;gap:13px;padding:12px 0;border-bottom:1px solid var(--line-soft)}
+  .rec:last-child{border-bottom:0}
+  .rec .num{flex:0 0 26px;height:26px;border-radius:8px;background:#1a1230;color:#fff;font-size:.8rem;font-weight:700;display:grid;place-items:center}
+  .rec p{font-size:.92rem;color:var(--ink-soft);margin:0}
+  .rec b{color:var(--ink)}
+
+  .foot{padding:26px 52px;border-top:1px solid var(--line);background:var(--bg-soft);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:center}
+  @media(max-width:640px){.foot{padding:22px 24px}}
+  .foot .who{font-weight:700}
+  .foot .sub{font-size:.82rem;color:var(--ink-mute)}
+
+  .topnav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px) saturate(140%);background:rgba(255,255,255,.82);border-bottom:1px solid var(--line);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px}
+  .topnav a{font-size:.88rem;font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:opacity .15s}
+  .topnav a:hover{opacity:.72}
+  .topnav .dl{color:#b8862b;border:1px solid var(--line);padding:6px 14px;border-radius:8px;font-size:.82rem}
+
+  @media print{
+    body{background:#fff}
+    .sheet{box-shadow:none;border:0;margin:0;border-radius:0;max-width:100%}
+    .topnav{display:none}
+  }
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a href="index.html">← Back to portfolio</a>
+  <a class="dl" href="Aadarsh_Tripathi_Case_Study_Luxury_Japan_Market_Entry.pdf" download>⬇ Download PDF</a>
+</nav>
+<div class="sheet">
+
+  <div class="top">
+    <div class="kicker">Global Marketing Strategy · Case Study</div>
+    <h1>A French luxury house enters Japan — which consumer to win, and how</h1>
+    <p>A market-entry strategy for a Parisian luxury brand expanding into Japan: using cultural analysis and cross-cultural segmentation to choose the right consumer, the right positioning, and the right product to launch with.</p>
+    <div class="meta">
+      <span class="pill">University of Leeds · MSc Marketing</span>
+      <span class="pill">Cross-Cultural Consumer Strategy</span>
+      <span class="pill">Hofstede · GCCP · Conjoint of culture</span>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">6</div><div class="l">Cultural dimensions analysed</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">Consumer segments profiled</div></div>
+    <div class="stat"><div class="n">Segment B</div><div class="l">The clear target</div></div>
+    <div class="stat"><div class="n">GCCP</div><div class="l">Positioning strategy</div></div>
+  </div>
+
+  <div class="pad">
+
+    <!-- BRIEF -->
+    <h2 class="sec"><span class="tag">Brief</span>The problem</h2>
+    <p class="body lead">A French luxury brand — Parisian heritage, fine craftsmanship, exclusivity — wanted to expand into Japan but faced three decisions: <em>which</em> Japanese consumer to target, <em>how</em> to position a foreign luxury brand in a culture that prizes tradition, and <em>what</em> product to lead with.</p>
+    <p class="body">A premium brand entering Japan risks rejection if it reads as culturally tone-deaf. My job was to ground the entry strategy in cultural evidence rather than assumption.</p>
+
+    <!-- APPROACH -->
+    <h2 class="sec"><span class="tag">Approach</span>Culture-first strategy</h2>
+    <p class="body">I built the strategy in three layers: a <b>Hofstede analysis</b> of Japan's cultural profile, a <b>segmentation</b> of Japanese consumers by their disposition toward foreign brands, and a <b>positioning + product</b> recommendation tied to consumer-culture-positioning theory and cognitive framing.</p>
+    <div class="chips">
+      <span class="chip">Hofstede cultural dimensions</span>
+      <span class="chip">Consumer-disposition segmentation</span>
+      <span class="chip">GCCP / LCCP / FCCP frameworks</span>
+      <span class="chip">Analytical vs holistic framing</span>
+      <span class="chip">Go-to-market product design</span>
+    </div>
+
+    <!-- HOFSTEDE -->
+    <h2 class="sec"><span class="tag">Result 1</span>The cultural fit</h2>
+    <p class="body">Japan's cultural profile maps almost perfectly onto a heritage luxury brand — especially its very high uncertainty avoidance (a demand for authenticity and provenance) and long-term orientation (valuing heirloom-quality goods).</p>
+    <div class="chartcard">
+      <div class="ct">Japan's cultural profile, as characterised in the analysis</div>
+      <div class="cs">Relative strength of each Hofstede dimension and what it means for a luxury entrant.</div>
+      <div class="bar-row"><span class="lbl">Uncertainty avoidance</span><div class="bar-track"><div class="bar-fill" style="width:96%"></div></div><span class="val">Very high</span></div>
+      <div class="bar-row"><span class="lbl">Masculinity / achievement</span><div class="bar-track"><div class="bar-fill" style="width:90%"></div></div><span class="val">High</span></div>
+      <div class="bar-row"><span class="lbl">Long-term orientation</span><div class="bar-track"><div class="bar-fill" style="width:86%"></div></div><span class="val">High</span></div>
+      <div class="bar-row"><span class="lbl">Collectivism</span><div class="bar-track"><div class="bar-fill" style="width:72%"></div></div><span class="val">High</span></div>
+      <div class="bar-row"><span class="lbl">Power distance</span><div class="bar-track"><div class="bar-fill" style="width:54%"></div></div><span class="val">Moderate</span></div>
+      <div class="bar-row"><span class="lbl">Indulgence</span><div class="bar-track"><div class="bar-fill" style="width:38%"></div></div><span class="val">Restrained</span></div>
+    </div>
+    <div class="callout"><span class="ico">🇯🇵</span><p>The takeaway: Japanese luxury buyers prefer <b>discreet, heritage-led prestige</b> over flashy display — and demand proof of authenticity. The brand's craftsmanship story is its biggest asset here.</p></div>
+
+    <!-- SEGMENTATION -->
+    <h2 class="sec"><span class="tag">Result 2</span>Who to target — 3 segments</h2>
+    <p class="body">I profiled three Japanese consumer segments on their disposition toward foreign brands (ethnocentrism, cosmopolitanism, patriotism, status motive — each scored 1–10). The contrast made the target obvious.</p>
+    <div class="chartcard">
+      <div class="legend">
+        <span><i class="sw sw-a"></i>Segment A — Patriotic</span>
+        <span><i class="sw sw-b"></i>Segment B — Bicultural</span>
+        <span><i class="sw sw-c"></i>Segment C — Globalist</span>
+      </div>
+
+      <div class="trait"><div class="tn">Ethnocentrism (preference for local brands)</div>
+        <div class="gb">
+          <div class="gcol"><div class="gtrack"><div class="gf gf-a" style="width:90%"></div></div><span class="gv">9</span></div>
+          <div class="gcol"><div class="gtrack"><div class="gf gf-b" style="width:30%"></div></div><span class="gv">3</span></div>
+          <div class="gcol"><div class="gtrack"><div class="gf gf-c" style="width:10%"></div></div><span class="gv">1</span></div>
+        </div>
+      </div>
+      <div class="trait"><div class="tn">Cosmopolitanism (openness to global brands)</div>
+        <div class="gb">
+          <div class="gcol"><div class="gtrack"><div class="gf gf-a" style="width:30%"></div></div><span class="gv">3</span></div>
+          <div class="gcol"><div class="gtrack"><div class="gf gf-b" style="width:80%"></div></div><span class="gv">8</span></div>
+          <div class="gcol"><div class="gtrack"><div class="gf gf-c" style="width:90%"></div></div><span class="gv">9</span></div>
+        </div>
+      </div>
+      <div class="trait"><div class="tn">Patriotism</div>
+        <div class="gb">
+          <div class="gcol"><div class="gtrack"><div class="gf gf-a" style="width:90%"></div></div><span class="gv">9</span></div>
+          <div class="gcol"><div class="gtrack"><div class="gf gf-b" style="width:50%"></div></div><span class="gv">5</span></div>
+          <div class="gcol"><div class="gtrack"><div class="gf gf-c" style="width:20%"></div></div><span class="gv">2</span></div>
+        </div>
+      </div>
+      <div class="trait"><div class="tn">Status motive</div>
+        <div class="gb">
+          <div class="gcol"><div class="gtrack"><div class="gf gf-a" style="width:90%"></div></div><span class="gv">9</span></div>
+          <div class="gcol"><div class="gtrack"><div class="gf gf-b" style="width:60%"></div></div><span class="gv">6</span></div>
+          <div class="gcol"><div class="gtrack"><div class="gf gf-c" style="width:20%"></div></div><span class="gv">2</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid3">
+      <div class="seg">
+        <span class="badge b-avoid">✕ Avoid</span><br>
+        <b>Segment A — Patriotic</b>
+        <p>Strongly ethnocentric, loyal to local brands, low openness. High rejection risk for a foreign house. Not worth the spend.</p>
+      </div>
+      <div class="seg target">
+        <span class="badge b-target">✓ Target</span><br>
+        <b>Segment B — Bicultural</b>
+        <p>Balanced: open to global luxury yet respects local culture, with the highest uniqueness &amp; variety-seeking (9/10). The sweet spot.</p>
+      </div>
+      <div class="seg">
+        <span class="badge b-short">~ Short-term only</span><br>
+        <b>Segment C — Globalist</b>
+        <p>Very open to foreign brands but low on status, loyalty and heritage — unlikely to sustain a premium relationship.</p>
+      </div>
+    </div>
+
+    <!-- POSITIONING -->
+    <h2 class="sec"><span class="tag">Result 3</span>How to position</h2>
+    <p class="body">For Segment B's bicultural mindset, I recommended a <b>Global Consumer Culture Positioning (GCCP)</b> strategy — presenting the brand as a symbol of worldwide prestige while signalling genuine respect for Japanese culture — paired with <b>holistic cognitive framing</b> that leads with symbolism, emotion and story rather than spec-by-spec reasoning.</p>
+    <div class="callout"><span class="ico">🎏</span><p><b>Why it works:</b> Segment B buys foreign luxury for global prestige <em>but</em> retains local pride — GCCP lets the brand be aspirational and culturally respectful at once, the only framing that satisfies both pulls.</p></div>
+
+    <!-- PRODUCT -->
+    <h2 class="sec"><span class="tag">So what</span>The go-to-market move</h2>
+    <p class="body">I translated the strategy into a concrete launch: a <b>"Kyoto Artisan × Maison" limited collection</b> — heritage handbags co-created with a traditional Japanese artisan, drawing on Kyoto motifs and kimono fabric, sold through an immersive, craft-demonstrating retail experience.</p>
+    <div class="rec"><div class="num">1</div><p><b>Target Segment B</b> — the bicultural consumer who wants both global prestige and cultural respect.</p></div>
+    <div class="rec"><div class="num">2</div><p><b>Position with GCCP + holistic framing</b> — lead with heritage, craftsmanship and provenance storytelling, not feature lists.</p></div>
+    <div class="rec"><div class="num">3</div><p><b>Launch the Kyoto Artisan collaboration</b> — local co-creation delivers the uniqueness this segment craves while honouring Japanese identity.</p></div>
+    <div class="rec"><div class="num">4</div><p><b>Lead with authenticity proof</b> — certificates, craftsmanship demos and after-sales service to satisfy Japan's high uncertainty avoidance.</p></div>
+
+  </div>
+
+  <div class="foot">
+    <div>
+      <div class="who">Aadarsh Dhananjay Tripathi</div>
+      <div class="sub">MSc International Marketing Management with Marketing Analysis · University of Leeds</div>
+    </div>
+    <div class="sub">Frameworks: Hofstede · Alden et al. (GCCP) · Full report available on request</div>
+  </div>
+
+</div>
+</body>
+</html>

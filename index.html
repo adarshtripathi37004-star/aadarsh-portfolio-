@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aadarsh Tripathi — Marketing & Marketing Analytics</title>
+<meta name="description" content="Portfolio of Aadarsh Tripathi — MSc Marketing graduate specialising in marketing analytics, brand strategy and AI-powered content. Founder of EveryBizAI. Based in Leeds, UK.">
+<style>
+  :root{
+    --bg:#0d1117;--bg-soft:#141b25;--card:#161e2a;--card-line:#243044;
+    --ink:#eef2f7;--ink-soft:#aab6c6;--ink-mute:#6f7d90;
+    --accent:#5b8cff;--accent-2:#34d8c2;--accent-warm:#ffb454;
+    --max:1080px;--r:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .accent{color:var(--accent)}
+
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(12px);background:rgba(13,17,23,.72);border-bottom:1px solid var(--card-line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-weight:700;letter-spacing:.3px;font-size:1.05rem}
+  .brand span{color:var(--accent)}
+  .nav-links{display:flex;gap:24px;font-size:.92rem;color:var(--ink-soft)}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-links a{transition:color .2s}
+  @media(max-width:760px){.nav-links{display:none}}
+
+  header.hero{position:relative;padding:92px 0 70px;overflow:hidden}
+  .hero-glow{position:absolute;inset:0;z-index:0;overflow:hidden}
+  .glow-blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;will-change:transform}
+  .glow-a{width:540px;height:540px;background:radial-gradient(circle,rgba(91,140,255,.55),transparent 70%);top:-160px;right:-40px;animation:drift1 17s ease-in-out infinite}
+  .glow-b{width:480px;height:480px;background:radial-gradient(circle,rgba(52,216,194,.45),transparent 70%);bottom:-200px;left:-80px;animation:drift2 19s ease-in-out infinite}
+  @keyframes drift1{50%{transform:translate(-50px,46px) scale(1.12)}}
+  @keyframes drift2{50%{transform:translate(56px,-34px) scale(1.1)}}
+  .hero-inner{position:relative;z-index:1}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-2);border:1px solid var(--card-line);padding:6px 14px;border-radius:999px;background:var(--bg-soft)}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 10px var(--accent-2)}
+  .hero-flex{display:grid;grid-template-columns:1.35fr .65fr;gap:48px;align-items:center}
+  @media(max-width:860px){.hero-flex{grid-template-columns:1fr;gap:28px}}
+  .avatar-wrap{display:flex;justify-content:center}
+  .avatar{position:relative;width:260px;height:260px;border-radius:50%;padding:5px;background:conic-gradient(from 180deg,var(--accent),var(--accent-2),var(--accent-warm),var(--accent));animation:spin 8s linear infinite}
+  @media(max-width:860px){.avatar{width:180px;height:180px}}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .avatar-inner{width:100%;height:100%;border-radius:50%;background:var(--bg-soft);overflow:hidden;display:grid;place-items:center}
+  .avatar-inner img{width:100%;height:100%;object-fit:cover;display:block}
+  .avatar-initials{font-size:4.5rem;font-weight:800;letter-spacing:-2px;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .grad-name{background:linear-gradient(120deg,#fff 12%,var(--accent) 42%,var(--accent-2) 68%,#fff 96%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradShift 7s linear infinite}
+  .grad-accent{background:linear-gradient(120deg,var(--accent),var(--accent-2),var(--accent-warm),var(--accent));background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradShift 6s linear infinite}
+  @keyframes gradShift{to{background-position:220% center}}
+  h1{font-size:clamp(2.3rem,6vw,4rem);line-height:1.05;margin:22px 0 14px;letter-spacing:-1px;font-weight:800}
+  .hero-sub{font-size:clamp(1.05rem,2.4vw,1.35rem);color:var(--ink-soft);max-width:700px;font-weight:500}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:26px;color:var(--ink-mute);font-size:.92rem}
+  .hero-meta span{display:inline-flex;align-items:center;gap:7px}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:12px;font-weight:600;font-size:.95rem;transition:transform .15s,box-shadow .2s,background .2s}
+  .btn-primary{background:linear-gradient(135deg,var(--accent),#6f6bff);color:#fff;box-shadow:0 8px 28px rgba(91,140,255,.35)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(91,140,255,.45)}
+  .btn-ghost{border:1px solid var(--card-line);color:var(--ink);background:var(--bg-soft)}
+  .btn-ghost:hover{border-color:var(--accent);transform:translateY(-2px)}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:54px}
+  @media(max-width:680px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--card);border:1px solid var(--card-line);border-radius:var(--r);padding:22px 20px}
+  .stat .num{font-size:1.9rem;font-weight:800;letter-spacing:-.5px;background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .stat .lab{font-size:.82rem;color:var(--ink-soft);margin-top:4px}
+
+  section{padding:74px 0}
+  .alt{background:var(--bg-soft);border-top:1px solid var(--card-line);border-bottom:1px solid var(--card-line)}
+  .sec-head{margin-bottom:40px}
+  .sec-tag{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  .sec-title{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;letter-spacing:-.6px;margin-top:8px}
+  .sec-lead{color:var(--ink-soft);max-width:700px;margin-top:12px}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:42px;align-items:start}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr}}
+  .about-grid p{color:var(--ink-soft);margin-bottom:16px}
+  .about-grid p strong{color:var(--ink)}
+  .panel{background:var(--card);border:1px solid var(--card-line);border-radius:var(--r);padding:26px}
+  .panel h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;color:var(--accent-2);margin-bottom:16px}
+  .fact{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px dashed var(--card-line);font-size:.92rem}
+  .fact:last-child{border-bottom:0}
+  .fact .k{color:var(--ink-mute)}
+  .fact .v{color:var(--ink);text-align:right;font-weight:500}
+
+  /* EXPERIENCE TIMELINE */
+  .timeline{position:relative;margin-top:10px}
+  .tl-item{position:relative;padding:0 0 30px 34px}
+  .tl-item:last-child{padding-bottom:0}
+  .tl-item::before{content:"";position:absolute;left:-8px;top:2px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
+  .tl-top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px}
+  .tl-role{font-size:1.12rem;font-weight:700}
+  .tl-org{color:var(--accent-2);font-size:.92rem;font-weight:600;margin-top:2px}
+  .tl-when{color:var(--ink-mute);font-size:.84rem;white-space:nowrap}
+  .tl-item ul{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:8px}
+  .tl-item li{position:relative;padding-left:20px;color:var(--ink-soft);font-size:.93rem}
+  .tl-item li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+  .tl-item li strong{color:var(--ink)}
+
+  /* EVERYBIZAI FEATURE */
+  .feature{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+  @media(max-width:820px){.feature{grid-template-columns:1fr}}
+  .feat-body h3{font-size:clamp(1.5rem,3.5vw,2rem);font-weight:800;letter-spacing:-.5px;margin-bottom:14px}
+  .feat-body p{color:var(--ink-soft);margin-bottom:14px}
+  .feat-body strong{color:var(--ink)}
+  .pipeline{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+  .pl-step{font-size:.8rem;padding:7px 13px;border-radius:10px;background:var(--card);border:1px solid var(--card-line);color:var(--ink-soft)}
+  .pl-arrow{color:var(--accent);align-self:center;font-weight:700}
+  .feat-visual{background:linear-gradient(150deg,rgba(91,140,255,.14),rgba(52,216,194,.1));border:1px solid var(--card-line);border-radius:22px;padding:30px}
+  .feat-visual .ig-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  .ig-logo{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af);display:grid;place-items:center;font-size:1.5rem}
+  .ig-name{font-weight:700}
+  .ig-handle{color:var(--ink-mute);font-size:.85rem}
+  .ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
+  .ig-cell{aspect-ratio:1;border-radius:10px;background:var(--card);border:1px solid var(--card-line);display:grid;place-items:center;font-size:1.4rem;opacity:.9}
+  .ig-stats{display:flex;gap:22px;font-size:.85rem;color:var(--ink-soft)}
+  .ig-stats b{display:block;color:var(--ink);font-size:1.05rem}
+
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:820px){.skills-grid{grid-template-columns:1fr}}
+  .skill-card{background:var(--card);border:1px solid var(--card-line);border-radius:var(--r);padding:26px;transition:transform .2s,border-color .2s}
+  .skill-card:hover{transform:translateY(-4px);border-color:var(--accent)}
+  .skill-card .ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;font-size:1.3rem;margin-bottom:16px;background:var(--bg-soft);border:1px solid var(--card-line)}
+  .skill-card h3{font-size:1.08rem;margin-bottom:10px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .chip{font-size:.78rem;padding:5px 11px;border-radius:999px;background:var(--bg-soft);border:1px solid var(--card-line);color:var(--ink-soft)}
+
+  /* WORK */
+  .work{display:flex;flex-direction:column;gap:26px}
+  .case{display:grid;grid-template-columns:64px 1fr;gap:24px;background:var(--card);border:1px solid var(--card-line);border-radius:var(--r);padding:30px;transition:border-color .2s,transform .2s;position:relative;overflow:hidden}
+  .case:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .case::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(91,140,255,.12),transparent 70%)}
+  @media(max-width:680px){.case{grid-template-columns:1fr}}
+  .case-badge{width:64px;height:64px;border-radius:14px;display:grid;place-items:center;font-size:1.7rem;background:var(--bg-soft);border:1px solid var(--card-line)}
+  .case-body{position:relative;z-index:1}
+  .case-top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px}
+  .case h3{font-size:1.25rem;font-weight:700}
+  .case .role{color:var(--accent-2);font-size:.88rem;font-weight:600}
+  .case .when{color:var(--ink-mute);font-size:.82rem}
+  .case .desc{color:var(--ink-soft);margin:12px 0 16px;font-size:.96rem}
+  .case ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .case li{position:relative;padding-left:24px;color:var(--ink-soft);font-size:.93rem}
+  .case li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+  .case li strong{color:var(--ink)}
+  .case-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+
+  /* EDUCATION */
+  .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:760px){.edu-grid{grid-template-columns:1fr}}
+  .edu{background:var(--card);border:1px solid var(--card-line);border-radius:var(--r);padding:26px}
+  .edu .deg{font-size:1.1rem;font-weight:700}
+  .edu .sch{color:var(--accent-2);font-size:.9rem;font-weight:600;margin:4px 0}
+  .edu .yr{color:var(--ink-mute);font-size:.84rem;margin-bottom:12px}
+  .edu p{color:var(--ink-soft);font-size:.9rem}
+
+  /* CONTACT */
+  .contact-card{background:linear-gradient(135deg,rgba(91,140,255,.12),rgba(52,216,194,.08));border:1px solid var(--card-line);border-radius:24px;padding:54px 40px;text-align:center}
+  .contact-card h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;letter-spacing:-.6px}
+  .contact-card p{color:var(--ink-soft);max-width:520px;margin:14px auto 28px}
+  .contact-links{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+  footer{padding:34px 0;text-align:center;color:var(--ink-mute);font-size:.85rem;border-top:1px solid var(--card-line)}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* scroll progress */
+  .progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:100;background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 0 12px rgba(52,216,194,.5)}
+
+  /* hero staggered load */
+  @keyframes rise{to{opacity:1;transform:none}}
+  .hero-rise{opacity:0;transform:translateY(22px);animation:rise .65s cubic-bezier(.22,.61,.36,1) forwards;animation-delay:var(--d,0s)}
+
+  /* timeline draw-in */
+  .tl-line{position:absolute;left:0;top:6px;bottom:26px;width:2px;background:linear-gradient(180deg,var(--accent),var(--accent-2));transform:scaleY(0);transform-origin:top;transition:transform 1.1s ease}
+  .timeline.in .tl-line{transform:scaleY(1)}
+  .tl-item{opacity:0;transform:translateX(14px);transition:opacity .55s ease,transform .55s ease}
+  .timeline.in .tl-item{opacity:1;transform:none}
+  .timeline.in .tl-item:nth-child(3){transition-delay:.25s}
+  .timeline.in .tl-item:nth-child(4){transition-delay:.5s}
+
+  .tl-item::before{transition:box-shadow .3s,background .3s}
+  .timeline.in .tl-item::before{box-shadow:0 0 0 4px var(--bg),0 0 14px rgba(91,140,255,.6)}
+
+  /* pipeline sequential highlight */
+  .pl-step{transition:border-color .35s,color .35s,box-shadow .35s,transform .35s}
+  .pl-step.lit{border-color:var(--accent);color:var(--ink);box-shadow:0 0 18px rgba(91,140,255,.45);transform:translateY(-2px)}
+  .pl-arrow{transition:color .35s,transform .35s}
+  .pl-arrow.lit{color:var(--accent-2);transform:scale(1.25)}
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .reveal,.hero-rise,.tl-item{opacity:1!important;transform:none!important}
+    .tl-line{transform:scaleY(1)!important}
+    .grad-name,.grad-accent{background-position:0 0!important}
+  }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav>
+  <div class="wrap nav-inner">
+    <div class="brand">Aadarsh <span>Tripathi</span></div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#everybizai">EveryBizAI</a>
+      <a href="#work">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-glow"><div class="glow-blob glow-a"></div><div class="glow-blob glow-b"></div></div>
+  <div class="wrap hero-inner">
+    <div class="hero-flex">
+      <div>
+        <span class="eyebrow hero-rise" style="--d:.05s"><span class="dot"></span>Open to graduate marketing roles · Leeds, UK</span>
+        <h1 class="hero-rise" style="--d:.17s">Hi, I'm <span class="grad-name">Aadarsh</span> —<br>marketing that's <span class="grad-accent">measured</span>, not guessed.</h1>
+        <p class="hero-sub hero-rise" style="--d:.29s">MSc Marketing &amp; Marketing Analytics graduate turning data, brand strategy and AI-powered content into campaigns that move the numbers. Founder of EveryBizAI.</p>
+        <div class="hero-meta hero-rise" style="--d:.41s">
+          <span>📍 Leeds, United Kingdom</span>
+          <span>🎓 University of Leeds</span>
+          <span>✅ Right to work in the UK</span>
+        </div>
+        <div class="cta-row hero-rise" style="--d:.53s">
+          <a class="btn btn-primary" href="#about">More about me →</a>
+          <a class="btn btn-ghost" href="#work">See my projects</a>
+        </div>
+      </div>
+      <div class="avatar-wrap hero-rise" style="--d:.65s">
+        <div class="avatar">
+          <div class="avatar-inner">
+            <img src="profile.jpg" alt="Aadarsh Tripathi" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+            <div class="avatar-initials" style="display:none;width:100%;height:100%;place-items:center">AT</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="num" data-to="22" data-prefix="+" data-suffix="%">+22%</div><div class="lab">Campaign engagement uplift</div></div>
+      <div class="stat"><div class="num" data-to="81" data-suffix="%">81%</div><div class="lab">Choice-model accuracy</div></div>
+      <div class="stat"><div class="num" data-to="3" data-prefix="£" data-suffix="k+">£3k+</div><div class="lab">Sponsorship revenue raised</div></div>
+      <div class="stat"><div class="num" data-to="25" data-suffix="+">25+</div><div class="lab">Events &amp; webinars run</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">About me</div>
+      <h2 class="sec-title">Analytics brain, brand instinct.</h2>
+    </div>
+    <div class="about-grid reveal">
+      <div>
+        <p>I'm <strong>Aadarsh Dhananjay Tripathi</strong> — a marketing graduate who started in finance and found my home where data meets storytelling. After a <strong>BBA in Finance</strong> in Pune, India, I moved to the UK to study an <strong>MSc in International Marketing Management with Marketing Analysis</strong> at the University of Leeds, because I wanted to understand not just <em>what</em> customers do, but <em>why</em> — and how to act on it.</p>
+        <p>Today I work as a <strong>Junior Marketing Analyst</strong> at the University of Leeds, where I analyse competitor campaigns, build reporting dashboards, and run institutional events end-to-end. Outside of that, I founded <strong>EveryBizAI</strong> — an AI-powered luxury brand-intelligence page where I own everything from editorial strategy to an automated content pipeline.</p>
+        <p>What ties it together is range: I'm as comfortable in <strong>R Studio building a clustering model</strong> as I am shaping a <strong>brand voice and a content calendar</strong>. I'm looking for a graduate role in marketing, marketing analytics or brand where both sides of that count.</p>
+      </div>
+      <div class="panel">
+        <h4>At a glance</h4>
+        <div class="fact"><span class="k">Focus</span><span class="v">Analytics · Brand · Content</span></div>
+        <div class="fact"><span class="k">Degree</span><span class="v">MSc Marketing (Leeds)</span></div>
+        <div class="fact"><span class="k">Tools</span><span class="v">Excel · R · n8n · AI</span></div>
+        <div class="fact"><span class="k">Location</span><span class="v">Leeds, UK</span></div>
+        <div class="fact"><span class="k">Languages</span><span class="v">English · Hindi</span></div>
+        <div class="fact"><span class="k">Status</span><span class="v">Open to opportunities</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Experience</div>
+      <h2 class="sec-title">How I've worked.</h2>
+      <p class="sec-lead">A path from commercial sponsorship and front-line retail to marketing analytics — each role added a different muscle: outreach, operations, and data.</p>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-line"></div>
+
+      <div class="tl-item">
+        <div class="tl-top">
+          <div>
+            <div class="tl-role">Junior Marketing Analyst (Intern)</div>
+            <div class="tl-org">University of Leeds · Leeds, UK</div>
+          </div>
+          <div class="tl-when">Sept 2025 – Present</div>
+        </div>
+        <ul>
+          <li>Analysed multi-channel campaign performance across <strong>10+ competitor datasets</strong>, delivering insights that lifted engagement by <strong>22%</strong> through optimised content and posting workflows.</li>
+          <li>Built analytics dashboards that <strong>cut insight-delivery time by 25%</strong>, enabling faster, more accurate reporting to senior stakeholders.</li>
+          <li>Coordinated <strong>13 webinars and 12 institutional events</strong> end-to-end — logistics, promotion, stakeholder comms and post-event reporting.</li>
+          <li>Collaborated with cross-functional teams to validate data and maintain reporting accuracy across marketing intelligence projects.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-top">
+          <div>
+            <div class="tl-role">Head of Sponsorship</div>
+            <div class="tl-org">Dr. D. Y. Patil ACS College · Pune, India</div>
+          </div>
+          <div class="tl-when">2020 – 2022</div>
+        </div>
+        <ul>
+          <li>Generated <strong>£3,000+ in sponsorship revenue</strong> across 15+ partner organisations at a <strong>75% conversion rate</strong> via targeted outreach, proposals and negotiation.</li>
+          <li>Drove attendance for <strong>12 events and 4 placement programmes</strong> through coordinated promotional campaigns and stakeholder engagement.</li>
+          <li>Produced survey-based dashboards and analytical reports presented during NAAC institutional review meetings.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-top">
+          <div>
+            <div class="tl-role">Sales Assistant (Part-Time)</div>
+            <div class="tl-org">Premier Convenience Store · Leeds, UK</div>
+          </div>
+          <div class="tl-when">2025 – Present</div>
+        </div>
+        <ul>
+          <li>Delivered professional customer service in a fast-paced retail environment while managing stock control, cash handling and daily operational reporting.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EVERYBIZAI -->
+<section id="everybizai">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Personal venture</div>
+      <h2 class="sec-title">EveryBizAI — a brand I built and run.</h2>
+    </div>
+    <div class="feature reveal">
+      <div class="feat-body">
+        <h3>AI-powered luxury brand intelligence</h3>
+        <p>EveryBizAI is an <strong>Instagram page I founded and run single-handedly</strong>, covering the luxury world across <strong>fashion, automotive and hospitality</strong>. I own it end-to-end: editorial strategy, brand positioning, content voice and production.</p>
+        <p>The engine behind it is an <strong>automated content pipeline</strong> I built — a single workflow that produces daily briefings, carousels and Reel covers, so the page ships a consistent, Reels-first content calendar without a team behind it.</p>
+        <div class="pipeline">
+          <span class="pl-step">Claude</span><span class="pl-arrow">→</span>
+          <span class="pl-step">ChatGPT</span><span class="pl-arrow">→</span>
+          <span class="pl-step">Higgsfield</span><span class="pl-arrow">→</span>
+          <span class="pl-step">Runway</span><span class="pl-arrow">→</span>
+          <span class="pl-step">n8n automation</span>
+        </div>
+        <p>It's where my three skill sets meet in one place: <strong>competitor analysis and brand-positioning frameworks</strong> to decide what to say, <strong>brand and content craft</strong> to say it well, and <strong>AI automation</strong> to ship it at pace.</p>
+        <a class="btn btn-primary" href="https://www.instagram.com/everybizai" target="_blank" rel="noopener" data-instagram>📸 View EveryBizAI on Instagram</a>
+      </div>
+      <div class="feat-visual">
+        <div class="ig-head">
+          <div class="ig-logo">📸</div>
+          <div>
+            <div class="ig-name">EveryBizAI</div>
+            <div class="ig-handle">@everybizai · Luxury brand intelligence</div>
+          </div>
+        </div>
+        <div class="ig-grid">
+          <div class="ig-cell">👜</div><div class="ig-cell">🏎️</div><div class="ig-cell">🥂</div>
+          <div class="ig-cell">💎</div><div class="ig-cell">🛥️</div><div class="ig-cell">👠</div>
+        </div>
+        <div class="ig-stats">
+          <span><b>Daily</b>Reels-first cadence</span>
+          <span><b>3</b>Luxury sectors</span>
+          <span><b>1</b>AI pipeline</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK / PROJECTS -->
+<section id="work" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Selected projects</div>
+      <h2 class="sec-title">Proof of the work.</h2>
+      <p class="sec-lead">Two in-depth case studies that show the range — a quantitative analytics study and a global brand strategy. Each follows a clear Brief → Approach → Result.</p>
+    </div>
+
+    <div class="work">
+
+      <article class="case reveal">
+        <div class="case-badge">📈</div>
+        <div class="case-body">
+          <div class="case-top">
+            <div>
+              <h3>Marketing Analytics Study — Premium Chocolate Brand</h3>
+              <div class="role">University of Leeds Business School · Analytics Report (LUBS5403M)</div>
+            </div>
+            <div class="when">2025–2026</div>
+          </div>
+          <p class="desc">An end-to-end consumer analytics project translating a raw transaction dataset into brand-positioning and purchase-driver insight.</p>
+          <ul>
+            <li>Segmented <strong>378 consumers into 4 profiles</strong> using hierarchical, k-means and model-based cluster analysis.</li>
+            <li>Built a logistic regression choice model reaching <strong>81% accuracy</strong> in predicting purchase decisions.</li>
+            <li>Applied PCA for brand positioning (<strong>61.7% variance</strong>), plus conjoint and market-basket analysis across <strong>9,835 transactions</strong>.</li>
+          </ul>
+          <div class="case-tags chips">
+            <span class="chip">R Studio</span><span class="chip">Clustering</span><span class="chip">Logistic Regression</span><span class="chip">PCA</span><span class="chip">Conjoint</span>
+          </div>
+          <a class="btn btn-primary" style="margin-top:18px" href="case-study-chocolate.html">Read full case study →</a>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case-badge">🌏</div>
+        <div class="case-body">
+          <div class="case-top">
+            <div>
+              <h3>Luxury Brand Market Entry — France → Japan</h3>
+              <div class="role">University of Leeds · Global Marketing Strategy</div>
+            </div>
+            <div class="when">2025–2026</div>
+          </div>
+          <p class="desc">A culture-first market-entry strategy for a Parisian luxury house expanding into Japan — choosing the consumer, the positioning and the launch product.</p>
+          <ul>
+            <li>Analysed Japan across <strong>6 Hofstede cultural dimensions</strong> to establish brand–market fit.</li>
+            <li>Profiled <strong>3 consumer segments</strong> on disposition to foreign brands and pinpointed the bicultural segment as the clear target.</li>
+            <li>Recommended a <strong>GCCP positioning</strong> with holistic framing and a concrete "Kyoto Artisan × Maison" launch concept.</li>
+          </ul>
+          <div class="case-tags chips">
+            <span class="chip">Cross-Cultural Strategy</span><span class="chip">Hofstede</span><span class="chip">Segmentation</span><span class="chip">Positioning</span><span class="chip">Go-to-Market</span>
+          </div>
+          <a class="btn btn-primary" style="margin-top:18px" href="case-study-luxury-japan.html">Read full case study →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">What I do</div>
+      <h2 class="sec-title">Three skill sets, one marketer.</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="ic">📊</div>
+        <h3>Marketing Analytics</h3>
+        <p style="color:var(--ink-soft);font-size:.93rem">Turning messy data into decisions — segmentation, modelling, dashboards and KPI tracking.</p>
+        <div class="chips"><span class="chip">R Studio</span><span class="chip">Excel</span><span class="chip">Segmentation</span><span class="chip">Dashboards</span><span class="chip">Regression</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="ic">✨</div>
+        <h3>Brand &amp; Content</h3>
+        <p style="color:var(--ink-soft);font-size:.93rem">Positioning, voice and a Reels-first content strategy that's consistent and on-brand.</p>
+        <div class="chips"><span class="chip">Brand Strategy</span><span class="chip">Copywriting</span><span class="chip">Social Media</span><span class="chip">Content Calendar</span><span class="chip">Canva</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="ic">⚙️</div>
+        <h3>AI &amp; Commercial</h3>
+        <p style="color:var(--ink-soft);font-size:.93rem">Automating workflows and managing stakeholders, sponsorship and events end-to-end.</p>
+        <div class="chips"><span class="chip">n8n Automation</span><span class="chip">Claude / GPT</span><span class="chip">Sponsorship</span><span class="chip">Event Mgmt</span><span class="chip">Stakeholders</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Education</div>
+      <h2 class="sec-title">Where it was built.</h2>
+    </div>
+    <div class="edu-grid reveal">
+      <div class="edu">
+        <div class="deg">MSc International Marketing Management with Marketing Analysis</div>
+        <div class="sch">University of Leeds, UK</div>
+        <div class="yr">2025 – Present</div>
+        <p>Modules: Marketing Analytics · Marketing Strategy · Marketing Communications · Cross-Cultural Consumer Psychology · Global Marketing · Research Methods · Global &amp; Digital Services · Global Distribution &amp; Supply Chains.</p>
+      </div>
+      <div class="edu">
+        <div class="deg">Bachelor of Business Administration (Finance)</div>
+        <div class="sch">Dr. D. Y. Patil ACS College, Pune, India</div>
+        <div class="yr">2019 – 2022</div>
+        <p>Completed three research-based dissertations involving questionnaire design, data collection, statistical analysis and structured report preparation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <h2>Let's build something measurable.</h2>
+      <p>I'm actively looking for graduate marketing, marketing analytics and brand roles. The fastest way to reach me is email or LinkedIn.</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:adarshtripathi002001@gmail.com">✉️ adarshtripathi002001@gmail.com</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/adarshtripathi283900" target="_blank" rel="noopener">in · LinkedIn</a>
+        <a class="btn btn-ghost" href="tel:+447375834692">📞 07375 834692</a>
+      </div>
+    </div>
+  </div>
+  <footer>© <span id="yr"></span> Aadarsh Dhananjay Tripathi · Marketing &amp; Marketing Analytics · Leeds, UK</footer>
+</section>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // scroll-reveal (sections, cards, timeline)
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // safety: guarantee hero entrance resolves to visible even if its animation is paused (non-painted context)
+  window.addEventListener('load', function(){
+    setTimeout(function(){
+      document.querySelectorAll('.hero-rise').forEach(function(el){
+        if(parseFloat(getComputedStyle(el).opacity) < 1){
+          (el.getAnimations ? el.getAnimations() : []).forEach(function(a){ try{ a.finish(); }catch(e){} });
+        }
+      });
+    }, 1400);
+  });
+
+  // scroll progress bar
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop || document.body.scrollTop) / max * 100 : 0) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // count-up stats
+  function easeOut(t){ return 1 - Math.pow(1 - t, 3); }
+  function countUp(el){
+    var to = parseFloat(el.getAttribute('data-to')) || 0;
+    var pre = el.getAttribute('data-prefix') || '';
+    var suf = el.getAttribute('data-suffix') || '';
+    if(reduce){ el.textContent = pre + to + suf; return; }
+    var dur = 1500, start = null;
+    function step(ts){
+      if(start === null) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      el.textContent = pre + Math.round(to * easeOut(p)) + suf;
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var statIO = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); statIO.unobserve(e.target); } });
+  }, {threshold:.5});
+  document.querySelectorAll('.stat .num').forEach(function(el){ statIO.observe(el); });
+
+  // sequential pipeline highlight
+  if(!reduce){
+    var steps = Array.prototype.slice.call(document.querySelectorAll('.pl-step'));
+    var arrows = Array.prototype.slice.call(document.querySelectorAll('.pl-arrow'));
+    var i = 0, plRunning = false, plTimer;
+    function plTick(){
+      steps.forEach(function(s){ s.classList.remove('lit'); });
+      arrows.forEach(function(a){ a.classList.remove('lit'); });
+      if(steps[i]) steps[i].classList.add('lit');
+      if(arrows[i]) arrows[i].classList.add('lit');
+      i = (i + 1) % steps.length;
+    }
+    var plSection = document.getElementById('everybizai');
+    if(plSection && steps.length){
+      var plIO = new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if(e.isIntersecting && !plRunning){ plRunning = true; plTick(); plTimer = setInterval(plTick, 1100); }
+          else if(!e.isIntersecting && plRunning){ plRunning = false; clearInterval(plTimer); }
+        });
+      }, {threshold:.3});
+      plIO.observe(plSection);
+    }
+  }
+</script>
+</body>
+</html>

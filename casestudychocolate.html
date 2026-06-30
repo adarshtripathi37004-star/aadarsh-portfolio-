@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study — Premium Chocolate Brand Analytics | Aadarsh Tripathi</title>
+<meta name="description" content="Marketing analytics case study: consumer segmentation, brand positioning, choice modelling, conjoint analysis and market-basket analysis for a premium chocolate brand. By Aadarsh Tripathi, MSc Marketing, University of Leeds.">
+<style>
+  :root{
+    --ink:#15202b; --ink-soft:#475566; --ink-mute:#7a8798;
+    --line:#e4e8ee; --line-soft:#eef1f5;
+    --bg:#ffffff; --bg-soft:#f6f8fb; --card:#ffffff;
+    --accent:#3f6fff; --accent-2:#12a594; --warn:#e0792b;
+    --r:16px; --max:920px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg-soft);line-height:1.62;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:var(--max);margin:28px auto;background:var(--bg);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 12px 40px rgba(20,32,43,.06)}
+  .pad{padding:44px 52px}
+  @media(max-width:640px){.pad{padding:30px 24px}}
+  a{color:var(--accent);text-decoration:none}
+
+  /* header */
+  .top{background:linear-gradient(135deg,#101a2e,#1d3358);color:#fff;padding:40px 52px}
+  @media(max-width:640px){.top{padding:30px 24px}}
+  .kicker{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:#7fd8c9;font-weight:600}
+  .top h1{font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.12;margin:12px 0 10px;letter-spacing:-.5px;font-weight:800}
+  .top p{color:#c2cede;max-width:640px;font-size:1.02rem}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .pill{font-size:.78rem;padding:6px 13px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);color:#e6edf6}
+
+  /* stat strip */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-soft)}
+  @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{padding:22px 20px;text-align:center;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:0}
+  .stat .n{font-size:1.55rem;font-weight:800;color:var(--accent);letter-spacing:-.5px}
+  .stat .l{font-size:.76rem;color:var(--ink-mute);margin-top:3px}
+
+  h2.sec{font-size:1.18rem;font-weight:800;letter-spacing:-.3px;margin:34px 0 6px;display:flex;align-items:center;gap:10px}
+  h2.sec:first-child{margin-top:0}
+  .tag{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2);background:var(--bg-soft);border:1px solid var(--line);padding:3px 9px;border-radius:6px}
+  p.body{color:var(--ink-soft);margin:8px 0 0;font-size:.96rem}
+  .lead{font-size:1.04rem;color:var(--ink);font-weight:500}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr}}
+  .seg{border:1px solid var(--line);border-radius:var(--r);padding:18px 18px;background:var(--card)}
+  .seg .h{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+  .seg .h b{font-size:.98rem}
+  .seg .badge{font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:999px}
+  .b-primary{background:#e9f0ff;color:#2a52d4}
+  .b-second{background:#e2f6f1;color:#0c8174}
+  .b-tertiary{background:#fff1e6;color:#bf6418}
+  .seg p{font-size:.86rem;color:var(--ink-soft);margin-top:7px}
+
+  .chartcard{border:1px solid var(--line);border-radius:var(--r);padding:22px;margin-top:16px;background:var(--card)}
+  .chartcard .ct{font-size:.82rem;font-weight:700;color:var(--ink);margin-bottom:4px}
+  .chartcard .cs{font-size:.78rem;color:var(--ink-mute);margin-bottom:16px}
+
+  /* horizontal bars */
+  .bar-row{display:grid;grid-template-columns:130px 1fr 56px;align-items:center;gap:12px;margin:9px 0;font-size:.82rem}
+  .bar-row .lbl{color:var(--ink-soft);text-align:right}
+  .bar-track{height:18px;background:var(--line-soft);border-radius:6px;overflow:hidden;position:relative}
+  .bar-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--accent),#6f8dff)}
+  .bar-fill.neg{background:linear-gradient(90deg,#e0792b,#eaa05a)}
+  .bar-fill.g{background:linear-gradient(90deg,var(--accent-2),#3fc7b4)}
+  .bar-row .val{font-weight:700;color:var(--ink);text-align:left}
+
+  .callout{display:flex;gap:12px;background:var(--bg-soft);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:14px 16px;margin-top:16px}
+  .callout .ico{font-size:1.1rem}
+  .callout p{font-size:.88rem;color:var(--ink-soft);margin:0}
+  .callout b{color:var(--ink)}
+
+  .rec{display:flex;gap:13px;padding:12px 0;border-bottom:1px solid var(--line-soft)}
+  .rec:last-child{border-bottom:0}
+  .rec .num{flex:0 0 26px;height:26px;border-radius:8px;background:#101a2e;color:#fff;font-size:.8rem;font-weight:700;display:grid;place-items:center}
+  .rec p{font-size:.92rem;color:var(--ink-soft);margin:0}
+  .rec b{color:var(--ink)}
+
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+  .chip{font-size:.76rem;padding:5px 11px;border-radius:999px;background:var(--bg-soft);border:1px solid var(--line);color:var(--ink-soft)}
+
+  .foot{padding:26px 52px;border-top:1px solid var(--line);background:var(--bg-soft);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:center}
+  @media(max-width:640px){.foot{padding:22px 24px}}
+  .foot .who{font-weight:700}
+  .foot .sub{font-size:.82rem;color:var(--ink-mute)}
+
+  .topnav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px) saturate(140%);background:rgba(255,255,255,.82);border-bottom:1px solid var(--line);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px}
+  .topnav a{font-size:.88rem;font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:opacity .15s}
+  .topnav a:hover{opacity:.72}
+  .topnav .dl{color:var(--accent-2);border:1px solid var(--line);padding:6px 14px;border-radius:8px;font-size:.82rem}
+
+  @media print{
+    body{background:#fff}
+    .sheet{box-shadow:none;border:0;margin:0;border-radius:0;max-width:100%}
+    .topnav{display:none}
+  }
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a href="index.html">← Back to portfolio</a>
+  <a class="dl" href="Aadarsh_Tripathi_Case_Study_Chocolate_Analytics.pdf" download>⬇ Download PDF</a>
+</nav>
+<div class="sheet">
+
+  <div class="top">
+    <div class="kicker">Marketing Analytics · Case Study</div>
+    <h1>Turning one chocolate dataset into a premium-brand strategy</h1>
+    <p>An end-to-end analytics project for a premium chocolate manufacturer — segmenting consumers, mapping brand positioning, and modelling what actually drives purchase, then translating it all into a commercial strategy.</p>
+    <div class="meta">
+      <span class="pill">University of Leeds · MSc Marketing</span>
+      <span class="pill">Module LUBS5403M</span>
+      <span class="pill">Tool: R Studio</span>
+      <span class="pill">Individual report</span>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">4</div><div class="l">Consumer segments identified</div></div>
+    <div class="stat"><div class="n">81.2%</div><div class="l">Choice-model accuracy</div></div>
+    <div class="stat"><div class="n">61.7%</div><div class="l">Variance in 2 components</div></div>
+    <div class="stat"><div class="n">9,835</div><div class="l">Transactions analysed</div></div>
+  </div>
+
+  <div class="pad">
+
+    <!-- BRIEF -->
+    <h2 class="sec"><span class="tag">Brief</span>The problem</h2>
+    <p class="body lead">A premium chocolate brand wanted to market more efficiently in a crowded, price-sensitive market — but didn't know <em>who</em> its most valuable customers were, <em>how</em> it was positioned against rivals, or <em>what</em> actually drove people to buy.</p>
+    <p class="body">My task: use the company's own consumer, brand-rating and transaction data to answer those three questions and convert the findings into decisions about targeting, positioning and product.</p>
+
+    <!-- APPROACH -->
+    <h2 class="sec"><span class="tag">Approach</span>Five analyses in R</h2>
+    <p class="body">I worked across three strategic themes — customer heterogeneity, customer dynamics and sustainability competitiveness — using a different technique for each question and cross-validating results so the recommendations were robust rather than reliant on a single method.</p>
+    <div class="chips">
+      <span class="chip">Cluster analysis (model-based · hierarchical · k-means)</span>
+      <span class="chip">PCA / factor analysis</span>
+      <span class="chip">Logistic regression</span>
+      <span class="chip">Choice-based conjoint</span>
+      <span class="chip">Market-basket / association rules</span>
+    </div>
+
+    <!-- SEGMENTATION -->
+    <h2 class="sec"><span class="tag">Result 1</span>Who to target — 4 segments</h2>
+    <p class="body">Three clustering methods converged on a <b>four-segment solution</b> (selected on the lowest BIC). Each segment has a distinct profile and a clear role in the strategy:</p>
+    <div class="grid2">
+      <div class="seg">
+        <div class="h"><b>High consumption &amp; income</b><span class="badge b-primary">Primary</span></div>
+        <p>The most financially attractive group. Lead with taste, quality, texture and indulgence.</p>
+      </div>
+      <div class="seg">
+        <div class="h"><b>Sustainability-focused</b><span class="badge b-second">Secondary</span></div>
+        <p>Highest sustainability score. Win with Fairtrade, ethical sourcing and eco-friendly packaging.</p>
+      </div>
+      <div class="seg">
+        <div class="h"><b>Young, social-led</b><span class="badge b-tertiary">Tertiary</span></div>
+        <p>High consumption, lower spend. Reach via social, limited-edition flavours and affordable packs.</p>
+      </div>
+      <div class="seg">
+        <div class="h"><b>Price-sensitive</b><span class="badge b-tertiary">Niche</span></div>
+        <p>Positive on sustainability but income-constrained. Use trial packs and entry-level premium lines.</p>
+      </div>
+    </div>
+
+    <!-- POSITIONING -->
+    <h2 class="sec"><span class="tag">Result 2</span>How to position — the white space</h2>
+    <p class="body">PCA on brand attributes reduced the field to two interpretable dimensions capturing <b>61.7%</b> of total variation, producing a positioning map of the premium market.</p>
+    <div class="chartcard">
+      <div class="ct">Variance captured by principal components</div>
+      <div class="cs">Two components are enough to summarise how brands differ.</div>
+      <div class="bar-row"><span class="lbl">Component 1</span><div class="bar-track"><div class="bar-fill g" style="width:68%"></div></div><span class="val">42.2%</span></div>
+      <div class="bar-row"><span class="lbl">Component 2</span><div class="bar-track"><div class="bar-fill g" style="width:31%"></div></div><span class="val">19.5%</span></div>
+      <div class="bar-row"><span class="lbl">Cumulative</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="val">61.7%</span></div>
+    </div>
+    <div class="callout"><span class="ico">🎯</span><p>The map revealed an <b>untapped low-organic, low-sugar space</b>. Recommendation: avoid the crowded centre and own a differentiated <b>luxury-organic</b> position — the "Hermès of chocolate".</p></div>
+
+    <!-- CHOICE MODEL -->
+    <h2 class="sec"><span class="tag">Result 3</span>What drives purchase</h2>
+    <p class="body">A logistic regression on a binary purchase outcome reached <b>81.2% accuracy</b> and surfaced the strongest behavioural drivers via odds ratios:</p>
+    <div class="chartcard">
+      <div class="ct">Effect on purchase odds (odds ratio, 1.0 = no effect)</div>
+      <div class="cs">Above 1.0 lifts purchase probability; below 1.0 lowers it.</div>
+      <div class="bar-row"><span class="lbl">Trust in NGOs</span><div class="bar-track"><div class="bar-fill" style="width:82%"></div></div><span class="val">1.65×</span></div>
+      <div class="bar-row"><span class="lbl">Gender</span><div class="bar-track"><div class="bar-fill" style="width:65%"></div></div><span class="val">1.31×</span></div>
+      <div class="bar-row"><span class="lbl">BMI</span><div class="bar-track"><div class="bar-fill neg" style="width:41%"></div></div><span class="val">0.82×</span></div>
+    </div>
+    <div class="callout"><span class="ico">⚖️</span><p><b>Analytical honesty:</b> despite 81% headline accuracy, sensitivity was low (the class balance inflates accuracy). I flagged the model as an <b>early-screening tool for understanding drivers</b>, not a final targeting list — and recommended adding purchase-history data next.</p></div>
+
+    <!-- CONJOINT -->
+    <h2 class="sec"><span class="tag">Result 4</span>What to build — conjoint</h2>
+    <p class="body">Choice-based conjoint quantified how much each attribute moves customer choice. The full model significantly out-performed the baseline (likelihood-ratio χ² = 1000.7, p &lt; 0.001).</p>
+    <div class="chartcard">
+      <div class="ct">Attribute importance (conjoint utility coefficients)</div>
+      <div class="cs">Larger positive bars = attributes customers value most.</div>
+      <div class="bar-row"><span class="lbl">Premium</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="val">+1.40</span></div>
+      <div class="bar-row"><span class="lbl">High sugar</span><div class="bar-track"><div class="bar-fill" style="width:44%"></div></div><span class="val">+0.61</span></div>
+      <div class="bar-row"><span class="lbl">Donation token</span><div class="bar-track"><div class="bar-fill" style="width:37%"></div></div><span class="val">+0.52</span></div>
+      <div class="bar-row"><span class="lbl">Fairtrade</span><div class="bar-track"><div class="bar-fill" style="width:33%"></div></div><span class="val">+0.47</span></div>
+      <div class="bar-row"><span class="lbl">Price</span><div class="bar-track"><div class="bar-fill neg" style="width:8%"></div></div><span class="val">−0.08</span></div>
+    </div>
+    <p class="body">Willingness-to-pay analysis showed customers would pay roughly <b>+£4.78 for organic</b> and <b>+£5.03 for high-energy</b> upgrades — confirming that ethical and functional value, not country of manufacture, justify a premium price.</p>
+
+    <!-- BASKET -->
+    <h2 class="sec"><span class="tag">Result 5</span>What sells together</h2>
+    <p class="body">Market-basket analysis across <b>9,835 transactions</b> (7,004 unique baskets) used association rules to find cross-sell opportunities — chocolate clustering with snacks and dairy (crisps, nuts, yogurt, biscuits) — pointing to premium bundles and shelf-placement tests rather than discounting.</p>
+
+    <!-- RECOMMENDATIONS -->
+    <h2 class="sec"><span class="tag">So what</span>The commercial recommendation</h2>
+    <div class="rec"><div class="num">1</div><p><b>Target two segments, two ways:</b> lead with indulgence and quality for the high-value segment; layer Fairtrade and sustainability messaging for the ethical segment.</p></div>
+    <div class="rec"><div class="num">2</div><p><b>Own the luxury-organic white space</b> identified on the positioning map — differentiate away from the crowded centre.</p></div>
+    <div class="rec"><div class="num">3</div><p><b>Launch a premium organic Fairtrade bar</b> with a donation element — the exact attribute mix conjoint showed drives choice — and justify the price through packaging, certification and storytelling.</p></div>
+    <div class="rec"><div class="num">4</div><p><b>Test premium bundles</b> near snacks and gifting zones, and add purchase-history data to sharpen future targeting.</p></div>
+
+  </div>
+
+  <div class="foot">
+    <div>
+      <div class="who">Aadarsh Dhananjay Tripathi</div>
+      <div class="sub">MSc International Marketing Management with Marketing Analysis · University of Leeds</div>
+    </div>
+    <div class="sub">Tools: R Studio · Excel · Full report available on request</div>
+  </div>
+
+</div>
+</body>
+</html>
